@@ -12,7 +12,7 @@ const EditPage = () => {
   useEffect(()=>{
     const fetchNote = async() =>{
       try {
-        const response = await axios.get(`http://localhost:5000/${id}`);
+        const response = await axios.get(`http://localhost:5000/api/notes/${id}`);
         setTitle(response.data.note.title);
         setContent(response.data.note.content);
       } catch (error) {
@@ -25,7 +25,7 @@ const EditPage = () => {
   const handleUpdate = async(e) =>{
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/${id}`,{title,content});
+      const response = await axios.put(`http://localhost:5000/api/notes/${id}`,{title,content});
       toast.success("Note updated successfully!");
       navigate('/');
     } catch (error) {

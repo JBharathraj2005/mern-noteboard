@@ -19,7 +19,7 @@ const CreatePage = () => {
   const handleSubmit = async(e) =>{
     e.preventDefault();
     try {
-      const request = await axios.post('http://localhost:5000',formData);
+      const request = await axios.post('http://localhost:5000/api/notes',formData);
       toast.success("Note added successfully!");
       navigate('/');
     } catch (error) {

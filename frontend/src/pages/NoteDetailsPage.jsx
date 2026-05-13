@@ -19,7 +19,7 @@ const NoteDetailsPage = () => {
             try {
 
                 const response = await axios.get(
-                    `http://localhost:5000/${id}`
+                    `http://localhost:5000/api/notes/${id}`
                 );
 
                 setTitle(response.data.note.title);
